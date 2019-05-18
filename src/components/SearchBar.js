@@ -27,7 +27,13 @@ class SearchBar extends Component {
   render() {
     return (
      <Navbar bg="dark" variant="dark" expand="sm" sticky="top">
-      <Navbar.Brand href="#home" className="ml-4">Search Videos</Navbar.Brand>
+      <Navbar.Brand 
+      href="#home" 
+      className="ml-4"
+      style={{color: 'olive'}}
+      >
+        Search Videos
+        </Navbar.Brand>
       <NavbarToggle aria-controls="basic-navbar-nav" />
       <NavbarCollapse id="basic-navbar-nav">
       <Form inline className="ml-auto" onSubmit={this.onFormSubmit}>
@@ -37,9 +43,15 @@ class SearchBar extends Component {
         onChange={this.onInputChange} 
         placeholder="Enter keywords" 
         className="mr-sm-2"
-      >
+       >
       </FormControl>
-      <Button type="submit" variant="outline-primary">Search</Button>
+      <Button 
+      type="submit" 
+      variant="outline-warning"
+      style={{color: 'olive', borderColor: 'olive'}}
+      >
+        Search
+      </Button>
       </Form>
       </NavbarCollapse>
      </Navbar>

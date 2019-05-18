@@ -1,14 +1,18 @@
 import React from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
+import './videoItem.css';
 
-
-const VideoItem = ({ video }) => {
+const VideoItem = ({ video, onVideoSelect }) => {
   return (
     <ListGroup.Item action>
-    <img src={video.snippet.thumbnails.medium.url} alt="thumbnails" />
-    <h5>{video.snippet.title}</h5>
+      <div className="video-item" onClick={() => onVideoSelect(video)}>
+        <img src={video.snippet.thumbnails.medium.url} alt="thumbnails" />
+        <div className="video-item-content">
+          <h5>{video.snippet.title}</h5>
+        </div>
+      </div>
     </ListGroup.Item>
-  )
+  );
 };
 
 export default VideoItem;

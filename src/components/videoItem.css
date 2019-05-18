@@ -1,0 +1,13 @@
+.video-item {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+}
+
+.video-item > img {
+  justify-self: center;
+  max-width: 200px;
+}
+
+.video-item-content {
+  align-self: center;
+}
