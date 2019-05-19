@@ -4,16 +4,30 @@ import Card from 'react-bootstrap/Card';
 
 const VideoDisplay = ({ video }) => {
   if (!video) {
-    return <div><h1>Please enter search keyword.</h1></div>;
+    return <div><h1>Loading..</h1></div>;
   } else {
+
+    const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
+
     return (
       <Fragment>
-        <div className="display-card" style={{width: '45vw', float: 'left', margin: '2rem'}}>
-          <Card>
-            <Card.Img src={video.snippet.thumbnails.medium.url} />
+        <div className="video-card"  style={{width: "100%"}}>
+          <Card style={{height: "50vh"}}>
+            <iframe
+            height="100%"
+            src={videoSrc} 
+            frameBorder="0"
+            title="video-player"
+            allow="accelerometer; 
+            autoplay;
+            encrypted-media;
+            gyroscope; 
+            picture-in-picture" 
+            allowFullScreen
+            />
           </Card>
 
-          <Card style={{ marginTop: '3rem', textAlign: 'center' }}>
+          <Card style={{ textAlign: 'center' }}>
             <Card.Body>
               <Card.Title>{video.snippet.title}</Card.Title>
               <Card.Text>{video.snippet.description}</Card.Text>
